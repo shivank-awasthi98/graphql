@@ -1,0 +1,16 @@
+syntax = "proto3";
+package Sa;
+import "github.com/infobloxopen/protoc-gen-gorm/options/gorm.proto";
+import "google/protobuf/timestamp.proto";
+message User{
+    option (gorm.opts) = {
+        ormable: true
+    };
+    
+    uint64 Id=1;
+    string Username=2;
+    string Email=3;
+    string Password=4;
+    google.protobuf.Timestamp created_at = 5;
+	google.protobuf.Timestamp updated_at = 6;
+}
